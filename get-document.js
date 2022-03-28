@@ -138,6 +138,13 @@ function getDocFun() {
     document.getElementById("slt-name").innerHTML = allName;
 
 }
+var sss = document.getElementsByTagName("select");
+for (var ss of sss) {
+    ss.style.width = "200px"
+
+}
+
+
 
 // function idElementFun() {
 //     var idChild = document.getElementById("slt-id").value;
