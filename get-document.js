@@ -85,8 +85,10 @@ function getDocFun() {
 
     var allIdArray = [];
     var allClassArray = [];
+    var allClassArrayFirst = [];
     var allTagArray = [];
     var allNameArray = [];
+    var str = "";
 
     var allId = "<option>";
     var allClass = "<option>";
@@ -98,14 +100,28 @@ function getDocFun() {
             allIdArray.push(element.attributes.getNamedItem("id").value)
         }
     }
+
+
     for (var element of allTags) {
         if (element.hasAttribute("class")) {
-            if (allClassArray.indexOf(element.attributes.getNamedItem("class").value) == -1) {
-                allClassArray.push(element.attributes.getNamedItem("class").value)
+            if (allClassArrayFirst.indexOf(element.attributes.getNamedItem("class").value) == -1) {
+                allClassArrayFirst.push(element.attributes.getNamedItem("class").value)
             }
 
         }
     }
+    for (var string of allClassArrayFirst) {
+        str += string + " ";
+    }
+    var stringArray = str.split(" ");
+    for (var mainClass of stringArray) {
+        if (allClassArray.indexOf(mainClass) == -1) {
+            allClassArray.push(mainClass)
+        }
+    }
+
+
+
     for (var element of allTags) {
         if (allTagArray.indexOf(element.tagName.toLocaleLowerCase()) == -1) {
             allTagArray.push(element.tagName.toLocaleLowerCase())
