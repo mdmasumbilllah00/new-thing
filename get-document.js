@@ -154,13 +154,20 @@ function getDocFun() {
     document.getElementById("slt-name").innerHTML = allName;
 
 }
-var sss = document.getElementsByTagName("select");
+var xxx = document.getElementById("slt-document");
+var sss = xxx.document.getElementsByTagName("select");
 for (var ss of sss) {
     ss.style.width = "200px"
 
 }
 
-
+document.getElementById("slt-document").addEventListener("mouseover", function () {
+    document.getElementById("slt-document").style.opacity = "1"
+});
+document.getElementById("slt-document").addEventListener("mouseout", function () {
+    document.getElementById("slt-document").style.opacity = ".1";
+    document.getElementById("slt-document").style.transition = "1.5s";
+});
 
 // function idElementFun() {
 //     var idChild = document.getElementById("slt-id").value;
